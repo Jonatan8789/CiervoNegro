@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preguntas Frecuentes</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link archivos de estilos-->
+    <link rel="stylesheet" href="../styles/style.css" />
+    <!--Link de bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="pre-navbar">
+        <a href="#" class="item -search" id="openSearch">Search</a>
+        <div class="right">
+          <a
+            href="https://twitter.com/CiervoNegro"
+            target="_blank"
+            title="go twitter"
+            class="item -social"
+            ><i class="fa-brands fa-square-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/_ciervonegro_/"
+            target="_blank"
+            title="go instagaram"
+            class="item -social"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/Ciervo_negro"
+            target="_blank"
+            title="go facebook"
+            class="item -social"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a
+            href="https://vimeo.com/CiervoNegro"
+            target="_blank"
+            title="go vimeo"
+            class="item -social"
+            ><i class="fa-brands fa-vimeo"></i
+          ></a>
+
+          <!-- <a href="#" class="item">Sign in</a>
+          <a href="#" class="item">Login</a>
+          <a href="#" class="item -cart">Cart(0)</a> -->
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-custom px-3" id="mainNavbar">
+        <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
+          <div>
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobrenosotros.html"
+                  >Sobre Nosotros</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <li class="nav-item" style="list-style: none">
+              <a class="nav-link" href="../index.html">
+                <img
+                  id="logo_principal"
+                  src="../assets/logos/Logo_ciervo_negro_blanco.png"
+                  alt="Logo marca"
+                />
+              </a>
+            </li>
+          </div>
+          <div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="personalizar_indumentaria.html"
+                  >Personalizar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ppff.html"
+                  >Preguntas Frecuentes</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contactos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="icono-contenedor">
+          <i class="fas fa-user-circle icono"></i>
+          <i class="fas fa-shopping-cart icono"></i>
+        </div>
+      </nav>
+    </header>
+    <main>
+<section class="faq">
+  <h2>Preguntas frecuentes</h2>
+
+  <!-- Pestañas -->
+  <div class="faq-tabs">
+    <button class="tab active" data-tab="compra">COMPRA</button>
+    <button class="tab" data-tab="talles">TALLES Y ESPECIFICACIONES</button>
+    <button class="tab" data-tab="pagos">PAGOS</button>
+    <button class="tab" data-tab="envio">ENVÍO Y ENTREGA</button>
+    <button class="tab" data-tab="pedidos">MIS PEDIDOS</button>
+    <button class="tab" data-tab="cuenta">MI CUENTA</button>
+    <button class="tab" data-tab="cambios">CAMBIOS Y GARANTÍAS</button>
+  </div>
+
+  <!-- Contenidos -->
+  <div class="faq-content">
+
+    <!-- COMPRA -->
+    <div class="faq-list active" data-content="compra">
+      <details>
+        <summary>¿Cómo comprar?</summary>
+        <p>Puedes comprar siguiendo estos pasos...</p>
+      </details>
+      <details>
+        <summary>¿Cómo saber si hay stock de un artículo?</summary>
+        <p>El stock se muestra en la ficha del producto...</p>
+      </details>
+      <details>
+        <summary>¿Cuál es el horario de atención al cliente?</summary>
+        <p>De lunes a viernes de 9 a 18 hs...</p>
+      </details>
+    </div>
+
+    <!-- TALLES -->
+    <div class="faq-list" data-content="talles">
+      <details>
+        <summary>¿Cómo elegir el talle correcto?</summary>
+        <p>Consulta nuestra tabla de talles antes de comprar...</p>
+      </details>
+      <details>
+        <summary>¿Las medidas son exactas?</summary>
+        <p>Pueden variar levemente según el modelo...</p>
+      </details>
+    </div>
+
+    <!-- PAGOS -->
+    <div class="faq-list" data-content="pagos">
+      <details>
+        <summary>¿Qué medios de pago aceptan?</summary>
+        <p>Aceptamos tarjetas de crédito, débito y transferencias...</p>
+      </details>
+      <details>
+        <summary>¿Puedo pagar con 2 tarjetas?</summary>
+        <p>No, actualmente solo aceptamos un medio de pago por compra...</p>
+      </details>
+    </div>
+
+    <!-- ENVÍO -->
+    <div class="faq-list" data-content="envio">
+      <details>
+        <summary>¿Cuánto tarda el envío?</summary>
+        <p>Depende de la zona, entre 2 y 7 días hábiles...</p>
+      </details>
+      <details>
+        <summary>¿Puedo retirar en tienda?</summary>
+        <p>Sí, selecciona la opción en el checkout...</p>
+      </details>
+    </div>
+
+    <!-- PEDIDOS -->
+    <div class="faq-list" data-content="pedidos">
+      <details>
+        <summary>¿Cómo ver el estado de mi pedido?</summary>
+        <p>En tu cuenta encontrarás el seguimiento...</p>
+      </details>
+    </div>
+
+    <!-- CUENTA -->
+    <div class="faq-list" data-content="cuenta">
+      <details>
+        <summary>¿Cómo registrarme?</summary>
+        <p>Completa el formulario de registro con tus datos...</p>
+      </details>
+    </div>
+
+    <!-- CAMBIOS -->
+    <div class="faq-list" data-content="cambios">
+      <details>
+        <summary>¿Cómo hacer un cambio?</summary>
+        <p>Contacta con atención al cliente para coordinarlo...</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="../js/script.js"></script>
+</body>
+</html>

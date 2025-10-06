@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Link archivos de estilos-->
+    <link rel="stylesheet" href="../styles/style.css" />
+    <!--Link de bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>CIERVO - NEGRO</title>
+  <style>
+    :root { --bg:#f5f7fb; --card:#ffffff; --text:#1f2937; --muted:#6b7280; --brand:#2563eb; }
+    *{box-sizing:border-box}
+   /* body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif;background:var(--bg);color:var(--text)}*/
+   /* header{padding:20px 24px;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:10}*/
+    header h1{margin:0;font-size:20px}
+    .app{display:grid;grid-template-columns:360px 1fr;gap:16px;max-width:1200px;margin:18px auto;padding:0 16px}
+    .panel{background:rgba(0,0,0,.5);border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .panel h2{font-size:16px;margin:0 0 8px;text-align: center;}
+    .section{padding:14px 16px;border-top:1px solid #eef2f7}
+    .section:first-child{border-top:0}
+    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{appearance:none;border:1px solid #d1d5db;background:rgba(0,0,0,.8);color:#6c6e72;padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer}
+    .btn:hover{border-color:#9ca3af}
+    .btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+    .btn.danger{background:#ef4444;border-color:#ef4444;color:#fff}
+    .btn.ghost{background:transparent}
+    .switch{display:inline-flex;border:1px solid #d1d5db;border-radius:10px;overflow:hidden}
+    .switch button{border:0;padding:8px 12px;background:#fff}
+    .switch button.active{background:#111827;color:#fff}
+    .swatches{display:grid;grid-template-columns:repeat(8,28px);gap:8px}
+    .swatch{width:28px;height:28px;border-radius:8px;border:1px solid #e5e7eb;cursor:pointer}
+    #stageWrap{padding:16px}
+    #stage{display:grid;place-items:center;background:#fff;border:1px dashed #d1d5db;border-radius:14px;overflow:hidden}
+    canvas{background:transparent}
+    .muted{color:var(--muted);font-size:12px}
+    .stack{display:flex;flex-direction:column;gap:8px}
+    .input, select{padding:8px 10px;border:1px solid #d1d5db;border-radius:8px;width:100%}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;background:rgba(0,0,0,.8);border:1px solid #e5e7eb;border-radius:6px;padding:2px 6px}
+    .hint{padding:10px;border-radius:10px;background:#f8fafc;border:1px dashed #dbeafe}
+    h2{color: whitesmoke;}
+   /* footer{max-width:1200px;margin:12px auto 24px;color:#6b7280;padding:0 16px}*/
+  </style>
+</head>
+<body>
+      <header>
+      <div class="pre-navbar">
+        <a href="#" class="item -search" id="openSearch">Search</a>
+        <div class="right">
+          <a
+            href="https://twitter.com/CiervoNegro"
+            target="_blank"
+            title="go twitter"
+            class="item -social"
+            ><i class="fa-brands fa-square-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/_ciervonegro_/"
+            target="_blank"
+            title="go instagaram"
+            class="item -social"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/Ciervo_negro"
+            target="_blank"
+            title="go facebook"
+            class="item -social"
+            ><i class="fa-brands fa-square-facebook"></i
+          ></a>
+          <a
+            href="https://vimeo.com/CiervoNegro"
+            target="_blank"
+            title="go vimeo"
+            class="item -social"
+            ><i class="fa-brands fa-vimeo"></i
+          ></a>
+
+          <!-- <a href="#" class="item">Sign in</a>
+          <a href="#" class="item">Login</a>
+          <a href="#" class="item -cart">Cart(0)</a> -->
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-custom px-3" id="mainNavbar">
+        <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
+          <div>
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobrenosotros.html"
+                  >Sobre Nosotros</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <li class="nav-item" style="list-style: none">
+              <a class="nav-link" href="..s/index.html">
+                <img
+                  id="logo_principal"
+                  src="../assets/logos/Logo_ciervo_negro_blanco.png"
+                  alt="Logo marca"
+                />
+              </a>
+            </li>
+          </div>
+          <div>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="personalizar_indumentaria.html">Personalizar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ppff.html"
+                  >Preguntas Frecuentes</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contactos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="icono-contenedor">
+          <i class="fas fa-user-circle icono"></i>
+          <i class="fas fa-shopping-cart icono"></i>
+        </div>
+      </nav>
+ 
+  </header>
+   <h2>Personalizador de prendas — Frente/Espalda · Ciervo Negro</h2>
+  <div class="app">
+    <!-- CONTROLES -->
+    <aside class="panel">
+      <div class="section">
+        <h2>Vista</h2>
+        <div class="row switch" id="sideSwitch">
+          <button class="active" data-side="front">Frente</button>
+          <button data-side="back">Espalda</button>
+        </div>
+        <div class="hint" style="margin-top:10px">
+          <div class="muted">Consejo: mantené los diseños dentro del <span class="kbd">área de impresión</span> punteada.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Color de la prenda</h2>
+        <div class="row">
+          <input id="colorPicker" class="input" type="color" value="#ffffff" />
+        </div>
+        <div class="row" style="margin-top:8px">
+          <div class="swatches" id="swatches"></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Imágenes</h2>
+        <div class="row"><input id="fileLogo" class="input" type="file" accept="image/*" /></div>
+        <div class="row">
+          <button class="btn" id="btnFit">Ajustar al pecho</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Texto</h2>
+        <div class="stack">
+          <input id="txtInput" class="input" type="text" placeholder="Escribí tu texto" />
+          <div class="grid2">
+            <select id="fontFamily">
+              <option>Arial</option>
+              <option>Impact</option>
+              <option>Montserrat</option>
+              <option>Roboto</option>
+              <option>Times New Roman</option>
+              <option>Courier New</option>
+              <option>Comic Sans MS</option>
+            </select>
+            <input id="txtColor" type="color" value="#111111" />
+          </div>
+          <div class="row">
+            <button class="btn" id="btnAddText">Agregar texto</button>
+            <button class="btn danger" id="btnDelete">Eliminar seleccionado</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Capas</h2>
+        <div class="row">
+          <button class="btn" id="btnForward">Traer al frente</button>
+          <button class="btn" id="btnBackward">Enviar atrás</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Guardar / Exportar</h2>
+        <div class="stack">
+          <div class="grid2">
+            <button class="btn" id="btnSaveFront">Guardar Frente</button>
+            <button class="btn" id="btnSaveBack">Guardar Espalda</button>
+          </div>
+          <div class="grid2">
+            <button class="btn" id="btnLoadFront">Cargar Frente</button>
+            <button class="btn" id="btnLoadBack">Cargar Espalda</button>
+          </div>
+          <div class="grid2" style="margin-top:6px">
+            <button class="btn primary" id="btnExportPNG">PNG Transparente</button>
+            <button class="btn" id="btnExportJPG">JPG Fondo Blanco</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- STAGE / CANVAS -->
+    <main class="panel" id="stageWrap">
+      <div id="stage">
+        <canvas id="c" width="520" height="600"></canvas>
+      </div>
+      <div class="section">
+        <div class="muted">Atajos: <span class="kbd">Supr/Backspace</span> borrar · <span class="kbd">Ctrl/Cmd + D</span> duplicar · 
+          <span class="kbd">Shift</span> mantiene proporción</div>
+      </div>
+    </main>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+  <script>
+    // ====== Config ======
+    const STAGE_W = 520, STAGE_H = 600;
+    const PRINT_AREA = { x: 100, y: 90, w: 320, h: 360 }; // área de impresión segura
+    // PNGs demo (reemplazar por tus assets con transparencia)
+    const ASSETS = {
+      front: '../assets/productos/Remera_personalizada_frente.png',
+      back:  '../assets/productos/Remera_personalizada_espalda.png' // usar otro PNG de espalda si tenés
+    };
+
+    const PALETTE = ['#ffffff','#111827','#e5e7eb','#ef4444','#f59e0b','#10b981','#3b82f6','#6366f1','#a855f7','#ec4899','#f43f5e','#22d3ee'];
+
+    // ====== Fabric init ======
+    const canvas = new fabric.Canvas('c', { preserveObjectStacking:true, backgroundColor: 'transparent' });
+    const sideState = { current:'front', frontJSON:null, backJSON:null };
+
+    // Base color layer (clip a la silueta con PNG mediante blend mode)
+    const colorLayer = new fabric.Rect({ left: 0, top: 0, width: STAGE_W, height: STAGE_H, fill: '#ffffff', selectable:false, evented:false });
+    canvas.add(colorLayer);
+
+    // Mock prenda image (por encima del color)
+    let garmentImg = null;
+
+    function loadSide(side){
+      sideState.current = side;
+      // Cambiar botón activo
+      document.querySelectorAll('#sideSwitch button').forEach(b=>b.classList.toggle('active', b.dataset.side===side));
+      fabric.Image.fromURL(ASSETS[side], (img)=>{
+        if(garmentImg) canvas.remove(garmentImg);
+        garmentImg = img;
+        garmentImg.selectable = false;
+        garmentImg.evented = false;
+        garmentImg.scaleToWidth(380);
+        garmentImg.set({ left: (STAGE_W - garmentImg.getScaledWidth())/2, top: 80 });
+        canvas.add(garmentImg);
+        garmentImg.moveTo(1000); // siempre arriba de los diseños
+        canvas.requestRenderAll();
+      }, { crossOrigin: 'anonymous' });
+
+      // Cargar JSON si existe
+      const json = side==='front' ? sideState.frontJSON : sideState.backJSON;
+      if(json){
+        canvas.loadFromJSON(json, ()=>{ canvas.add(colorLayer); canvas.sendToBack(colorLayer); garmentImg && garmentImg.bringToFront(); canvas.requestRenderAll(); });
+      }
+    }
+
+    // Área de impresión visual
+    const printAreaRect = new fabric.Rect({ left: PRINT_AREA.x, top: PRINT_AREA.y, width: PRINT_AREA.w, height: PRINT_AREA.h, fill: 'rgba(0,0,0,0.02)', stroke: '#9ca3af', strokeDashArray:[6,6], selectable:false, evented:false, rx:8, ry:8 });
+    canvas.add(printAreaRect); printAreaRect.moveTo(10);
+
+    // Mantener objetos dentro del área de impresión
+    function keepInBounds(obj){
+      const padding = 4;
+      const bounds = obj.getBoundingRect(true, true);
+      const minX = PRINT_AREA.x + padding;
+      const minY = PRINT_AREA.y + padding;
+      const maxX = PRINT_AREA.x + PRINT_AREA.w - padding;
+      const maxY = PRINT_AREA.y + PRINT_AREA.h - padding;
+      // mover si se sale
+      if(bounds.left < minX) obj.left += (minX - bounds.left);
+      if(bounds.top < minY) obj.top  += (minY - bounds.top);
+      if(bounds.left + bounds.width > maxX) obj.left -= (bounds.left + bounds.width - maxX);
+      if(bounds.top + bounds.height > maxY) obj.top -= (bounds.top + bounds.height - maxY);
+    }
+    canvas.on('object:moving', e=>{ keepInBounds(e.target); });
+    canvas.on('object:scaling', e=>{ keepInBounds(e.target); });
+    canvas.on('object:rotating', e=>{ keepInBounds(e.target); });
+
+    // ====== Controles UI ======
+    // Cambiar lado
+    document.querySelectorAll('#sideSwitch button').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        // Guardar estado actual antes de cambiar
+        const json = canvas.toJSON(['designSide']);
+        if(sideState.current==='front') sideState.frontJSON = json; else sideState.backJSON = json;
+        // Limpiar objetos de diseño (menos colorLayer, printArea y garment)
+        const keep = new Set([colorLayer, printAreaRect, garmentImg]);
+        canvas.getObjects().slice().forEach(o=>{ if(!keep.has(o)) canvas.remove(o); });
+        loadSide(btn.dataset.side);
+      });
+    });
+
+    // Paleta de colores
+    const swWrap = document.getElementById('swatches');
+    PALETTE.forEach(c=>{
+      const el = document.createElement('button');
+      el.className = 'swatch'; el.style.background = c; el.title = c; el.addEventListener('click', ()=>{ colorLayer.set('fill', c); canvas.requestRenderAll(); document.getElementById('colorPicker').value = toHex(c); });
+      swWrap.appendChild(el);
+    });
+    function toHex(c){
+      const ctx = document.createElement('canvas').getContext('2d');
+      ctx.fillStyle = c; return ctx.fillStyle; // normaliza a hex
+    }
+    document.getElementById('colorPicker').addEventListener('input', e=>{ colorLayer.set('fill', e.target.value); canvas.requestRenderAll(); });
+
+    // Subir imagen/logo
+    document.getElementById('fileLogo').addEventListener('change', (e)=>{
+      const file = e.target.files[0]; if(!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev)=>{
+        fabric.Image.fromURL(ev.target.result, (img)=>{
+          img.set({ left: PRINT_AREA.x + 10, top: PRINT_AREA.y + 10, cornerStyle:'circle', transparentCorners:false });
+          img.scaleToWidth(160);
+          canvas.add(img).setActiveObject(img);
+        }, { crossOrigin:'anonymous' });
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Ajustar al pecho (centrar y escalar al 60% del ancho del área)
+    document.getElementById('btnFit').addEventListener('click', ()=>{
+      const obj = canvas.getActiveObject();
+      if(!obj) return;
+      const targetW = PRINT_AREA.w * 0.6;
+      if(obj.type==='image' || obj.type==='textbox' || obj.type==='group'){
+        if(obj.type==='image') obj.scaleToWidth(targetW);
+        if(obj.type==='textbox') obj.set({ width: targetW });
+        obj.set({ left: PRINT_AREA.x + (PRINT_AREA.w - obj.getScaledWidth())/2, top: PRINT_AREA.y + 20 });
+        canvas.requestRenderAll();
+      }
+    });
+
+    // Texto
+    document.getElementById('btnAddText').addEventListener('click', ()=>{
+      const val = document.getElementById('txtInput').value.trim();
+      if(!val) return;
+      const color = document.getElementById('txtColor').value;
+      const font = document.getElementById('fontFamily').value;
+      const tb = new fabric.Textbox(val, { left: PRINT_AREA.x + 20, top: PRINT_AREA.y + 20, width: PRINT_AREA.w - 40, fontSize: 36, fill: color, fontFamily: font, textAlign: 'center', cornerStyle:'circle', transparentCorners:false });
+      canvas.add(tb).setActiveObject(tb);
+    });
+
+    // Eliminar seleccionado
+    document.getElementById('btnDelete').addEventListener('click', ()=>{
+      const a = canvas.getActiveObject(); if(a && a!==garmentImg && a!==printAreaRect && a!==colorLayer){ canvas.remove(a); }
+    });
+    document.addEventListener('keydown', (e)=>{
+      if((e.key==='Delete'||e.key==='Backspace') && document.activeElement.tagName!=='INPUT' && document.activeElement.tagName!=='TEXTAREA'){
+        const a = canvas.getActiveObject(); if(a && a!==garmentImg && a!==printAreaRect && a!==colorLayer){ canvas.remove(a); }
+      }
+      if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='d'){
+        const a = canvas.getActiveObject(); if(a){ a.clone((cl)=>{ cl.set({ left:a.left+20, top:a.top+20 }); canvas.add(cl).setActiveObject(cl); }); e.preventDefault(); }
+      }
+    });
+
+    // Capas
+    document.getElementById('btnForward').addEventListener('click', ()=>{ const a=canvas.getActiveObject(); if(a){ a.bringToFront(); garmentImg && garmentImg.bringToFront(); } });
+    document.getElementById('btnBackward').addEventListener('click', ()=>{ const a=canvas.getActiveObject(); if(a){ a.sendToBack(); colorLayer && colorLayer.sendToBack(); } });
+
+    // Guardar/Cargar por lado
+    document.getElementById('btnSaveFront').addEventListener('click', ()=>{ sideState.frontJSON = canvas.toJSON(['designSide']); localStorage.setItem('designFront', JSON.stringify(sideState.frontJSON)); });
+    document.getElementById('btnSaveBack').addEventListener('click', ()=>{ sideState.backJSON = canvas.toJSON(['designSide']); localStorage.setItem('designBack', JSON.stringify(sideState.backJSON)); });
+    document.getElementById('btnLoadFront').addEventListener('click', ()=>{ const j = JSON.parse(localStorage.getItem('designFront')||'null'); if(j){ canvas.loadFromJSON(j, ()=>{ canvas.add(colorLayer); canvas.sendToBack(colorLayer); garmentImg && garmentImg.bringToFront(); canvas.requestRenderAll(); }); } });
+    document.getElementById('btnLoadBack').addEventListener('click', ()=>{ const j = JSON.parse(localStorage.getItem('designBack')||'null'); if(j){ canvas.loadFromJSON(j, ()=>{ canvas.add(colorLayer); canvas.sendToBack(colorLayer); garmentImg && garmentImg.bringToFront(); canvas.requestRenderAll(); }); } });
+
+    // Exportación (mockups)
+    function exportDataURL({type='png', bg='transparent'}={}){
+      const prevBg = canvas.backgroundColor;
+      canvas.backgroundColor = bg==='transparent' ? 'rgba(0,0,0,0)' : '#ffffff';
+      canvas.discardActiveObject(); canvas.requestRenderAll();
+      const data = canvas.toDataURL({ format: type==='png' ? 'png' : 'jpeg', quality: 1 });
+      canvas.backgroundColor = prevBg; canvas.requestRenderAll();
+      return data;
+    }
+    function downloadURI(uri, name){ const a=document.createElement('a'); a.href=uri; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }
+
+    document.getElementById('btnExportPNG').addEventListener('click', ()=>{
+      const uri = exportDataURL({ type:'png', bg:'transparent' });
+      downloadURI(uri, `mockup_${sideState.current}.png`);
+    });
+    document.getElementById('btnExportJPG').addEventListener('click', ()=>{
+      const uri = exportDataURL({ type:'jpg', bg:'white' });
+      downloadURI(uri, `mockup_${sideState.current}.jpg`);
+    });
+
+    // Inicializar
+    loadSide('front');
+    // Asegurar capas: color al fondo, printArea en medio, prenda arriba
+    canvas.sendToBack(colorLayer);
+    garmentImg && garmentImg.bringToFront();
+  </script>
+      <footer class="main-footer">
+		<div class="l-container">
+			<div class="menu">
+				<h2 class="title">CATEGORIAS</h2>
+				<div><a href="index.html" data--faq="" class="links">INICIO</a></div>
+				<div><a href="./pages/productos.html" data--faq="" class="links">PRODUCTOS</a></div>
+				<div><a href="./assets/Otro/guia_de_talles.png" target="_blank" class="links">GUIA DE TALLES</a></div>
+				<div><a href="./pages/ppff.html" data--faq="" class="links">PREGUNTAS FRECUENTES</a></div>
+			</div>
+			<div class="menu -newsletter">
+				<h2 class="title">Newsletter</h2>
+				<blockquote class="description">
+					Recibi las ultimas noticias y ofertas de Ciervo Negro
+				</blockquote>
+				<form action="//kirschnerbrasil.us13.list-manage.com/subscribe/post?u=1969413eccf5ec8e2c34fe9ac&amp;id=1c8e5bb591" target="_blank" method="post" id="FooterNewsletterForm">
+					<input type="text" name="EMAIL" placeholder="mail@gmail.com" required="">
+					<input type="hidden" name="b_1969413eccf5ec8e2c34fe9ac_1c8e5bb591" tabindex="-1" value="">
+					<button type="submit" name="subscribe">send</button>
+				</form>
+			</div>
+			<div class="menu">
+				<h2 class="title">Follow Ciervo Negro</h2>
+				<div><a href="https://www.facebook.com/Ciervo_negro" target="_blank" class="links">FACEBOOK</a></div>
+				<div><a href="https://twitter.com/CiervoNegro" target="_blank" class="links">TWITTER</a></div>
+				<div><a href="https://www.instagram.com/_ciervonegro_/" target="_blank" class="links">INSTAGRAM</a></div>
+				<!-- <a href="#" class="links">ON THE BLOG</a> -->
+			</div>
+			<div id="bottom" class="bottom">
+				<div id="links-credit" class="links-credit wrapper-links">
+					<p class="copyright">© 2025 Ciervo Negro- Argentina &nbsp;|&nbsp; <a class="links -white -credits" id="credits">Site Credits</a></p>
+					<!-- <a href="#" class="links -white">Privacy Policy</a>
+					<a href="#" class="links -white">Terms & Conditions</a> -->
+
+				</div>
+				<div id="by" class="by">Design: <a href="http://www.madebysix.com/" target="_blank">Jonatan</a>  &nbsp;|&nbsp;  Build: <a href="http://andregumieri.com/?utm_source=kirschner&amp;utm_medium=site&amp;utm_campaign=assinatura" target="_blank">Jonatan</a></div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
