@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Recuperar Contraseña</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
@@ -49,12 +49,12 @@
         <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
           <div>
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
               <li class="nav-item">
-                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link" href="productos.php">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sobrenosotros.html"
+                <a class="nav-link" href="sobrenosotros.php"
                   >Sobre Nosotros</a
                 >
               </li>
@@ -62,7 +62,7 @@
           </div>
           <div>
             <li class="nav-item" style="list-style: none">
-              <a class="nav-link" href="../index.html">
+              <a class="nav-link" href="../index.php">
                 <img
                   id="logo_principal"
                   src="../assets/logos/Logo_ciervo_negro_blanco.png"
@@ -74,15 +74,15 @@
           <div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="personalizar_indumentaria.html">Personalizar</a>
+                <a class="nav-link" href="personalizar_indumentaria.php">Personalizar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="ppff.html"
+                <a class="nav-link" href="ppff.php"
                   >Preguntas Frecuentes</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contactos</a>
+                <a class="nav-link" href="contacto.php">Contactos</a>
               </li>
             </ul>
           </div>
@@ -102,15 +102,13 @@
       </nav>
     </header>
   <div class="container">
-    <h2>Iniciar Sesión</h2>
+    <h2>Recuperar Contraseña</h2>
     <form>
       <input type="email" placeholder="Correo electrónico" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Entrar</button>
+      <button type="submit">Enviar enlace</button>
     </form>
     <div class="links">
-      <p><a href="recuperopass.html">¿Olvidaste tu contraseña?</a></p>
-      <p>¿No tenés cuenta? <a href="registro.html">Registrate</a></p>
+      <p><a href="../index.php">Volver al inicio</a></p>
     </div>
   </div>
 </body>
@@ -118,10 +116,10 @@
 		<div class="l-container">
 			<div class="menu">
 				<h2 class="title">CATEGORIAS</h2>
-				<div><a href="index.html" data--faq="" class="links">INICIO</a></div>
-				<div><a href="./pages/productos.html" data--faq="" class="links">PRODUCTOS</a></div>
+				<div><a href="index.php" data--faq="" class="links">INICIO</a></div>
+				<div><a href="./pages/productos.php" data--faq="" class="links">PRODUCTOS</a></div>
 				<div><a href="./assets/Otro/guia_de_talles.png" target="_blank" class="links">GUIA DE TALLES</a></div>
-				<div><a href="./pages/ppff.html" data--faq="" class="links">PREGUNTAS FRECUENTES</a></div>
+				<div><a href="./pages/ppff.php" data--faq="" class="links">PREGUNTAS FRECUENTES</a></div>
 			</div>
 			<div class="menu -newsletter">
 				<h2 class="title">Newsletter</h2>

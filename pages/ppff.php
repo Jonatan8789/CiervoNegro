@@ -74,12 +74,12 @@
         <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
           <div>
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
               <li class="nav-item">
-                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link" href="productos.php">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="sobrenosotros.html"
+                <a class="nav-link" href="sobrenosotros.php"
                   >Sobre Nosotros</a
                 >
               </li>
@@ -87,7 +87,7 @@
           </div>
           <div>
             <li class="nav-item" style="list-style: none">
-              <a class="nav-link" href="../index.html">
+              <a class="nav-link" href="../index.php">
                 <img
                   id="logo_principal"
                   src="../assets/logos/Logo_ciervo_negro_blanco.png"
@@ -99,17 +99,17 @@
           <div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="personalizar_indumentaria.html"
+                <a class="nav-link" href="personalizar_indumentaria.php"
                   >Personalizar</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="ppff.html"
+                <a class="nav-link" href="ppff.php"
                   >Preguntas Frecuentes</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contactos</a>
+                <a class="nav-link" href="contacto.php">Contactos</a>
               </li>
             </ul>
           </div>
