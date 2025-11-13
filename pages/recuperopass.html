@@ -1,36 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
-      rel="stylesheet"
-    />
-    <!--Link archivos de estilos-->
-    <link rel="stylesheet" href="./styles/style.css" />
-    <!--Link de bootstrap-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <title>CIERVO - NEGRO</title>
-  </head>
-  <body>
-    <header>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Contraseña</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+        <header>
       <div class="pre-navbar">
         <a href="#" class="item -search" id="openSearch">Search</a>
         <div class="right">
@@ -72,12 +49,12 @@
         <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
           <div>
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/productos.html">Productos</a>
+                <a class="nav-link" href="productos.html">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/sobrenosotros.html"
+                <a class="nav-link" href="sobrenosotros.html"
                   >Sobre Nosotros</a
                 >
               </li>
@@ -85,10 +62,10 @@
           </div>
           <div>
             <li class="nav-item" style="list-style: none">
-              <a class="nav-link" href="pages/index.html">
+              <a class="nav-link" href="../index.html">
                 <img
                   id="logo_principal"
-                  src="./assets/logos/Logo_ciervo_negro_blanco.png"
+                  src="../assets/logos/Logo_ciervo_negro_blanco.png"
                   alt="Logo marca"
                 />
               </a>
@@ -97,21 +74,21 @@
           <div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="pages/personalizar_indumentaria.html">Personalizar</a>
+                <a class="nav-link" href="personalizar_indumentaria.html">Personalizar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/ppff.html"
+                <a class="nav-link" href="ppff.html"
                   >Preguntas Frecuentes</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/contacto.html">Contactos</a>
+                <a class="nav-link" href="contacto.html">Contactos</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="icono-contenedor">
-          <a href="./pages/login.html" class="icono-usuario">
+          <a href="./php/login.php" class="icono-usuario">
               <i class="fas fa-user icono"></i>
           </a>
         <div class="carrito-container">
@@ -124,66 +101,17 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="banner-header">
-        <div class="banner-header-content">
-          <div class="intro">Introducing</div>
-          <h1 class="title">CIERVO NEGRO</h1>
-          <div class="subtitle">Somos la mejor opción</div>
-        </div>
-      </section>
-      <section class="promo-grid" >
-        <div
-          class="promo-card"
-          style="background-image: url('./assets/productos/CN_Julio_2526.jpg')"
-          data-aos="flip-up"
-        >
-          <div class="promo-content">
-            <h2>REMERAS</h2>
-            <p>Norway</p>
-            <a href="#">DETALLES</a>
-          </div>
-        </div>
-        <div
-          class="promo-card"
-          style="background-image: url('./assets/productos/CN_Julio_2518.jpg')"
-          data-aos="flip-up"
-        >
-          <div class="promo-content">
-            <h2>BUZOS</h2>
-            <p>Our Race Kit</p>
-            <a href="#">DETALLES</a>
-          </div>
-        </div>
-        <div
-          class="promo-card"
-          style="background-image: url('./assets/productos/CN_Julio_2506.jpg')"
-          data-aos="flip-up"
-        >
-          <div class="promo-content">
-            <h2>CAMPERAS</h2>
-            <p>Santa Catarina</p>
-            <a href="#">DETALLES</a>
-          </div>
-        </div>
-      </section>
-      <section class="testimonios-clientes">
-          <h3>Lo que dicen nuestros clientes</h3>
-          <div class="testimonios">
-            <div class="testimonio">
-              <p>"HG Mates siempre responde rápido y con excelente calidad."</p>
-              <span>– Carla M., Mercedes-Benz</span>
-            </div>
-            <div class="testimonio">
-              <p>
-                "Nuestros empleados aman los productos. ¡Gracias por la atención
-                personalizada!"
-              </p>
-              <span>– Martín A., Google</span>
-            </div>
-          </div>
-      </section>
-    </main>
+  <div class="container">
+    <h2>Recuperar Contraseña</h2>
+    <form>
+      <input type="email" placeholder="Correo electrónico" required>
+      <button type="submit">Enviar enlace</button>
+    </form>
+    <div class="links">
+      <p><a href="../index.html">Volver al inicio</a></p>
+    </div>
+  </div>
+</body>
     <footer class="main-footer">
 		<div class="l-container">
 			<div class="menu">
@@ -222,41 +150,4 @@
 			</div>
 		</div>
 	</footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-    <script>
-      const navbar = document.getElementById("mainNavbar");
-      const logo = document.getElementById("logo_principal");
-
-      let scrolled = false; // Estado para controlar el cambio
-
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50 && !scrolled) {
-          scrolled = true;
-          navbar.classList.add("scrolled");
-
-          logo.style.opacity = 0;
-          setTimeout(() => {
-            logo.src = "./assets/logos/Logo_ciervo.png";
-            logo.style.opacity = 1;
-          }, 200);
-        } else if (window.scrollY <= 50 && scrolled) {
-          scrolled = false;
-          navbar.classList.remove("scrolled");
-
-          logo.style.opacity = 0;
-          setTimeout(() => {
-            logo.src = "./assets/logos/Logo_ciervo_negro_blanco.png";
-            logo.style.opacity = 1;
-          }, 200);
-        }
-      });
-    </script>
-
-    
-  </body>
 </html>
