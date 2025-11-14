@@ -1,155 +1,54 @@
+<?php
+session_start();
+
+// Si ya está logueado, redirige al perfil
+if (isset($_SESSION['usuario'])) {
+    header("Location: perfil.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="../styles/style.css">
+  <title>Iniciar Sesión - Ciervo Negro</title>
+ <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
-        <header>
-      <div class="pre-navbar">
-        <a href="#" class="item -search" id="openSearch">Search</a>
-        <div class="right">
-          <a
-            href="https://twitter.com/CiervoNegro"
-            target="_blank"
-            title="go twitter"
-            class="item -social"
-            ><i class="fa-brands fa-square-twitter"></i
-          ></a>
-          <a
-            href="https://www.instagram.com/_ciervonegro_/"
-            target="_blank"
-            title="go instagaram"
-            class="item -social"
-            ><i class="fa-brands fa-square-instagram"></i
-          ></a>
-          <a
-            href="https://www.facebook.com/Ciervo_negro"
-            target="_blank"
-            title="go facebook"
-            class="item -social"
-            ><i class="fa-brands fa-square-facebook"></i
-          ></a>
-          <a
-            href="https://vimeo.com/CiervoNegro"
-            target="_blank"
-            title="go vimeo"
-            class="item -social"
-            ><i class="fa-brands fa-vimeo"></i
-          ></a>
+  <main class="auth-container">
+    <section class="auth-form">
+      <h2>Iniciar Sesión</h2>
 
-          <!-- <a href="#" class="item">Sign in</a>
-          <a href="#" class="item">Login</a>
-          <a href="#" class="item -cart">Cart(0)</a> -->
+      <form action="procesar_login.php" method="POST" autocomplete="off">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required
+            autocomplete="email"
+          >
         </div>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-custom px-3" id="mainNavbar">
-        <div class="collapse navbar-collapse navbar-centrado" id="navbarMain">
-          <div>
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="productos.php">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sobrenosotros.php"
-                  >Sobre Nosotros</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <li class="nav-item" style="list-style: none">
-              <a class="nav-link" href="../index.php">
-                <img
-                  id="logo_principal"
-                  src="../assets/logos/Logo_ciervo_negro_blanco.png"
-                  alt="Logo marca"
-                />
-              </a>
-            </li>
-          </div>
-          <div>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="personalizar_indumentaria.php">Personalizar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ppff.php"
-                  >Preguntas Frecuentes</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contactos</a>
-              </li>
-            </ul>
-          </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            required
+            autocomplete="current-password"
+          >
         </div>
-        <div class="icono-contenedor">
-          <a href="./php/login.php" class="icono-usuario">
-              <i class="fas fa-user icono"></i>
-          </a>
-        <div class="carrito-container">
-          <a href="./php/header.php" id="carrito-toggle">
-            <i class="fas fa-shopping-cart icono"></i>
-            <span class="contador">
-              <?php echo isset($_SESSION['carrito']) ? count($_SESSION['carrito']) : 0; ?>
-            </span>
-          </a> 
-        </div>
-      </nav>
-    </header>
-  <div class="container">
-    <h2>Iniciar Sesión</h2>
-    <form>
-      <input type="email" placeholder="Correo electrónico" required>
-      <input type="password" placeholder="Contraseña" required>
-      <button type="submit">Entrar</button>
-    </form>
-    <div class="links">
-      <p><a href="recuperopass.php">¿Olvidaste tu contraseña?</a></p>
-      <p>¿No tenés cuenta? <a href="registro.php">Registrate</a></p>
-    </div>
-  </div>
+
+        <button type="submit" class="btn-enviar">Ingresar</button>
+      </form>
+
+      <p class="extra">
+        ¿No tenés cuenta? <a href="registro.php">Registrate</a>
+      </p>
+    </section>
+  </main>
 </body>
-    <footer class="main-footer">
-		<div class="l-container">
-			<div class="menu">
-				<h2 class="title">CATEGORIAS</h2>
-				<div><a href="index.php" data--faq="" class="links">INICIO</a></div>
-				<div><a href="./pages/productos.php" data--faq="" class="links">PRODUCTOS</a></div>
-				<div><a href="./assets/Otro/guia_de_talles.png" target="_blank" class="links">GUIA DE TALLES</a></div>
-				<div><a href="./pages/ppff.php" data--faq="" class="links">PREGUNTAS FRECUENTES</a></div>
-			</div>
-			<div class="menu -newsletter">
-				<h2 class="title">Newsletter</h2>
-				<blockquote class="description">
-					Recibi las ultimas noticias y ofertas de Ciervo Negro
-				</blockquote>
-				<form action="//kirschnerbrasil.us13.list-manage.com/subscribe/post?u=1969413eccf5ec8e2c34fe9ac&amp;id=1c8e5bb591" target="_blank" method="post" id="FooterNewsletterForm">
-					<input type="text" name="EMAIL" placeholder="mail@gmail.com" required="">
-					<input type="hidden" name="b_1969413eccf5ec8e2c34fe9ac_1c8e5bb591" tabindex="-1" value="">
-					<button type="submit" name="subscribe">send</button>
-				</form>
-			</div>
-			<div class="menu">
-				<h2 class="title">Follow Ciervo Negro</h2>
-				<div><a href="https://www.facebook.com/Ciervo_negro" target="_blank" class="links">FACEBOOK</a></div>
-				<div><a href="https://twitter.com/CiervoNegro" target="_blank" class="links">TWITTER</a></div>
-				<div><a href="https://www.instagram.com/_ciervonegro_/" target="_blank" class="links">INSTAGRAM</a></div>
-				<!-- <a href="#" class="links">ON THE BLOG</a> -->
-			</div>
-			<div id="bottom" class="bottom">
-				<div id="links-credit" class="links-credit wrapper-links">
-					<p class="copyright">© 2025 Ciervo Negro- Argentina &nbsp;|&nbsp; <a class="links -white -credits" id="credits">Site Credits</a></p>
-					<!-- <a href="#" class="links -white">Privacy Policy</a>
-					<a href="#" class="links -white">Terms & Conditions</a> -->
-
-				</div>
-				<div id="by" class="by">Design: <a href="http://www.madebysix.com/" target="_blank">Jonatan</a>  &nbsp;|&nbsp;  Build: <a href="http://andregumieri.com/?utm_source=kirschner&amp;utm_medium=site&amp;utm_campaign=assinatura" target="_blank">Jonatan</a></div>
-			</div>
-		</div>
-	</footer>
 </html>
