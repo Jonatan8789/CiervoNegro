@@ -19,7 +19,7 @@ if (isset($_SESSION['usuario'])) {
     <div class="login-box">
 
         <div class="login-left">
-            <img src="assets/img/login-illustration.png" alt="Login">
+            <img src="assets/logos/Logo_Ciervo.png" alt="Login">
         </div>
 
         <div class="login-right">
