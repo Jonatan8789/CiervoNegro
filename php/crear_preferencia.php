@@ -40,7 +40,7 @@ $preference_data = [
         "pending" => "pending.php"
     ],
     "auto_return" => "approved",
-    "notification_url" => "https://tusitio.com/webhook.php"
+    "notification_url" => "https://ciervonegro.com.ar/webhook.php"
 ];
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($preference_data));
