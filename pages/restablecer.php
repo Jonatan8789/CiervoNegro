@@ -1,16 +1,43 @@
+<?php
+require '../conexion.php';
+
+if (!isset($_GET['token'])) {
+    die("Token inválido.");
+}
+
+$token = $_GET['token'];
+
+// Verificar token
+$sql = "SELECT user_id, expira FROM recuperacion WHERE token = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $token);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows === 0) {
+    die("Enlace no válido o expirado.");
+}
+
+$stmt->bind_result($user_id, $expira);
+$stmt->fetch();
+
+// Verificar expiración
+if (strtotime($expira) < time()) {
+    die("El enlace expiró. Solicitá uno nuevo.");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Contraseña</title>
+    <title>Restablecer Contraseña</title>
 
-    <link rel="stylesheet" href="../styles/style.css"> <!-- Usa el mismo CSS del login -->
-    
+    <link rel="stylesheet" href="../styles/style.css">
+
     <style>
-        /* Ajustes específicos de recuperar contraseña */
         body {
-            background-color: #000000;
+            background: #000;
             font-family: Arial, sans-serif;
         }
 
@@ -31,7 +58,7 @@
             font-weight: 300;
         }
 
-        .login-container input[type="email"] {
+        input[type="password"] {
             width: 100%;
             padding: 14px;
             margin-bottom: 20px;
@@ -55,32 +82,23 @@
         .login-btn:hover {
             background-color: #d40000;
         }
-
-        .links a {
-            color: #fff;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 
 <body>
 
     <div class="login-container">
-        <h2>Recuperar Contraseña</h2>
+        <h2>Crear nueva contraseña</h2>
 
-        <form action="enviar_enlace.php" method="POST">
-            <input type="email" name="correo" placeholder="Correo electrónico" required>
-            <button type="submit" class="login-btn">Enviar enlace</button>
+        <form action="update_password.php" method="POST">
+            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+            <input type="hidden" name="token" value="<?php echo $token; ?>">
+
+            <input type="password" name="pass1" placeholder="Nueva contraseña" required>
+            <input type="password" name="pass2" placeholder="Confirmar contraseña" required>
+
+            <button type="submit" class="login-btn">Actualizar</button>
         </form>
-
-        <div class="links">
-            <p><a href="login.php">Volver al login</a></p>
-        </div>
     </div>
 
 </body>
