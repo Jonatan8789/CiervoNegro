@@ -581,7 +581,7 @@ details[open] summary::after {
     font-size: 32px;
     margin-bottom: 30px;
     text-align: center;
-    color: #1b1b1a;
+    color: #1b1b1a !important;
 }
 
 /* Inputs */
