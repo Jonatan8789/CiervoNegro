@@ -597,7 +597,7 @@ details[open] summary::after {
 
 .login-btn {
     width: 100%;
-    background: #46b436;
+    background: #1c1d1c;
     border: none;
     padding: 15px;
     border-radius: 30px;
@@ -610,7 +610,7 @@ details[open] summary::after {
 }
 
 .login-btn:hover {
-    background: #3ca02f;
+    background: #000000;
     transform: scale(1.02);
 }
 
