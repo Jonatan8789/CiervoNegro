@@ -581,12 +581,13 @@ details[open] summary::after {
     font-size: 32px;
     margin-bottom: 30px;
     text-align: center;
+    color: #1a1917;
 }
 
 /* Inputs */
 .login-input {
     width: 100%;
-    background: #ffffff;
+    background: #e8e8e8;
     border: none;
     padding: 15px 18px;
     margin-bottom: 18px;
@@ -601,7 +602,7 @@ details[open] summary::after {
     border: none;
     padding: 15px;
     border-radius: 30px;
-    color: #fff;
+    color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -622,6 +623,11 @@ details[open] summary::after {
 .login-extra a {
     color: #333;
     text-decoration: none;
+    font-size: 14px;
+}
+
+.login-extra p {
+    color: #333;
     font-size: 14px;
 }
 
