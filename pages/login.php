@@ -31,16 +31,15 @@ if (isset($_SESSION['usuario'])) {
             <button class="login-btn">LOGIN</button>
 
             <div class="login-extra">
-                <a href="recuperopass.php">¿Olvidaste tu usuario o contraseña?</a>
+                <a href="#">¿Olvidaste tu usuario o contraseña?</a>
             </div>
 
             <div class="login-register">
-                ¿No tienes cuenta? <a href="../php/registro.php">Crear Cuenta →</a>
+                ¿No tienes cuenta? <a href="#">Crear Cuenta →</a>
             </div>
         </div>
 
     </div>
-</div>
     </section>
   </main>
 </body>
