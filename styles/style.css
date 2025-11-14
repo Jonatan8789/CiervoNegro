@@ -531,3 +531,126 @@ details[open] summary::after {
     }
 }
 
+/* ================= LOGIN ADAPTADO ================ */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px; /* Evita solaparse con navbar */
+    padding-bottom: 120px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    max-width: 900px;
+    width: 90%;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Lado izquierdo */
+.login-left {
+    width: 45%;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-left img {
+    width: 80%;
+    opacity: 0.9;
+}
+
+/* Lado derecho */
+.login-right {
+    width: 55%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-right h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Inputs */
+.login-input {
+    width: 100%;
+    background: #e8e8e8;
+    border: none;
+    padding: 15px 18px;
+    margin-bottom: 18px;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    background: #46b436;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #3ca02f;
+    transform: scale(1.02);
+}
+
+.login-extra {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-extra a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-extra a:hover {
+    text-decoration: underline;
+}
+
+.login-register {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-register a {
+    font-weight: bold;
+    color: #0057ff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .login-box {
+        flex-direction: column;
+    }
+    .login-left,
+    .login-right {
+        width: 100%;
+        padding: 40px;
+    }
+    .login-left {
+        padding-bottom: 0;
+    }
+}

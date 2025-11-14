@@ -15,39 +15,32 @@ if (isset($_SESSION['usuario'])) {
  <link rel="stylesheet" href="../styles/style.css" />
 </head>
 <body>
-  <main class="auth-container">
-    <section class="auth-form">
-      <h2>Iniciar Sesión</h2>
+<div class="login-container">
+    <div class="login-box">
 
-      <form action="procesar_login.php" method="POST" autocomplete="off">
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required
-            autocomplete="email"
-          >
+        <div class="login-left">
+            <img src="assets/img/login-illustration.png" alt="Login">
         </div>
 
-        <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input 
-            type="password" 
-            id="password" 
-            name="password" 
-            required
-            autocomplete="current-password"
-          >
+        <div class="login-right">
+            <h2>Member Login</h2>
+
+            <input type="email" placeholder="Email" class="login-input">
+            <input type="password" placeholder="Password" class="login-input">
+
+            <button class="login-btn">LOGIN</button>
+
+            <div class="login-extra">
+                <a href="recuperopass.php">¿Olvidaste tu usuario o contraseña?</a>
+            </div>
+
+            <div class="login-register">
+                ¿No tienes cuenta? <a href="../php/registro.php">Crear Cuenta →</a>
+            </div>
         </div>
 
-        <button type="submit" class="btn-enviar">Ingresar</button>
-      </form>
-
-      <p class="extra">
-        ¿No tenés cuenta? <a href="registro.php">Registrate</a>
-      </p>
+    </div>
+</div>
     </section>
   </main>
 </body>
