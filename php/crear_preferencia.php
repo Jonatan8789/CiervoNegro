@@ -1,52 +1,33 @@
 <?php
-header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+require __DIR__ . '/vendor/autoload.php';
 
-// Tu Access Token de prueba (Sandbox)
-$access_token = "TEST-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+MercadoPago\SDK::setAccessToken("APP_USR-7467248525868011-112510-3e7af34f59fb7fe83e53a9e4c1a90f5e-3015030132"); // TEST-XXXXXXXXXXXXXXXX
 
-// Recibir datos enviados desde el frontend
-$data = json_decode(file_get_contents("php://input"), true);
+// Obtener el carrito desde el fetch (JSON)
+$body = json_decode(file_get_contents("php://input"), true);
 
-if (!isset($data["items"]) || empty($data["items"])) {
-    echo json_encode(["error" => "No hay productos"]);
-    exit;
+$items = [];
+
+foreach ($body["carrito"] as $producto) {
+    $item = new MercadoPago\Item();
+    $item->title = $producto["nombre"];
+    $item->quantity = $producto["cantidad"];
+    $item->unit_price = $producto["precio"];
+    $items[] = $item;
 }
 
-// Crear preferencia en Mercado Pago
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.mercadopago.com/checkout/preferences");
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    "Content-Type: application/json",
-    "Authorization: Bearer " . $access_token
-]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
+$preference = new MercadoPago\Preference();
+$preference->items = $items;
 
-$preference_data = [
-    "items" => array_map(function($item) {
-        return [
-            "title" => $item["nombre"],
-            "quantity" => 1,
-            "unit_price" => $item["precio"],
-            "currency_id" => "ARS"
-        ];
-    }, $data["items"]),
-    "back_urls" => [
-        "success" => "success.php",
-        "failure" => "failure.php",
-        "pending" => "pending.php"
-    ],
-    "auto_return" => "approved",
-    "notification_url" => "https://tusitio.com/webhook.php"
+// URLs para exito, fallo o pago pendiente (modo prueba)
+$preference->back_urls = [
+    "success" => "https://www.ciervonegro.com.ar/exito.php",
+    "failure" => "https://www.ciervonegro.com.ar/error.php",
+    "pending" => "https://www.ciervonegro.com.ar/pendiente.php"
 ];
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($preference_data));
+$preference->auto_return = "approved";
 
-$response = curl_exec($ch);
-curl_close($ch);
+$preference->save();
 
-echo $response;
-?>
+echo json_encode([ "id" => $preference->id ]);

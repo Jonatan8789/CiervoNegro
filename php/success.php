@@ -20,6 +20,6 @@ $merchant_order_id = $_GET['merchant_order_id'] ?? '';
     <p><strong>ID de pago:</strong> <?php echo htmlspecialchars($payment_id); ?></p>
     <p><strong>Estado:</strong> <?php echo htmlspecialchars($status); ?></p>
     <p><strong>ID de orden:</strong> <?php echo htmlspecialchars($merchant_order_id); ?></p>
-    <a href="index.html">Volver a la tienda</a>
+    <a href="index.php">Volver a la tienda</a>
 </body>
 </html>

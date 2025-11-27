@@ -17,6 +17,6 @@ $status = $_GET['status'] ?? '';
     <p>Tu pago está pendiente de confirmación. Te notificaremos cuando se acredite.</p>
     <p><strong>ID de pago:</strong> <?php echo htmlspecialchars($payment_id); ?></p>
     <p><strong>Estado:</strong> <?php echo htmlspecialchars($status); ?></p>
-    <a href="index.html">Volver a la tienda</a>
+    <a href="index.php">Volver a la tienda</a>
 </body>
 </html>

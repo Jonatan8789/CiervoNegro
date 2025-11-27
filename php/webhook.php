@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Access Token de prueba Mercado Pago
-$access_token = "TEST-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$access_token = "APP_USR-7467248525868011-112510-3e7af34f59fb7fe83e53a9e4c1a90f5e-3015030132";
 
 // Capturar datos enviados por Mercado Pago
 $input = file_get_contents("php://input");

@@ -3,33 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro - Ciervo Negro</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="../styles/style.css">
+
 </head>
+
 <body>
-  <main class="auth-container">
-    <section class="auth-form">
+
+  <div class="login-container">
+    <div class="login-right login-box">
       <h2>Crear Cuenta</h2>
-      <form action="procesar_registro.php" method="POST">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
 
-        <div class="form-group">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+      <form action="procesar_registro.php" method="POST" autocomplete="off">
 
-        <div class="form-group">
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" required>
-        </div>
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          placeholder="Nombre completo"
+          required
+          class="login-input"
+        >
 
-        <button type="submit" class="btn-enviar">Registrarme</button>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Correo electrónico"
+          required
+          class="login-input"
+        >
+
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          placeholder="Contraseña"
+          required
+          class="login-input"
+        >
+
+        <button type="submit" class="login-btn">Registrarme</button>
       </form>
 
-      <p class="extra">¿Ya tenés cuenta? <a href="login.php">Ingresá</a></p>
-    </section>
-  </main>
+      <p class="extra">
+        ¿Ya tenés cuenta? <a href="../pages/login.php">Ingresá</a>
+      </p>
+  </div>
+</div>
 </body>
 </html>
