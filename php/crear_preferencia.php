@@ -19,11 +19,30 @@ foreach ($body["carrito"] as $producto) {
 $preference = new MercadoPago\Preference();
 $preference->items = $items;
 
+<<<<<<< HEAD
 // URLs para exito, fallo o pago pendiente (modo prueba)
 $preference->back_urls = [
     "success" => "https://www.ciervonegro.com.ar/exito.php",
     "failure" => "https://www.ciervonegro.com.ar/error.php",
     "pending" => "https://www.ciervonegro.com.ar/pendiente.php"
+=======
+$preference_data = [
+    "items" => array_map(function($item) {
+        return [
+            "title" => $item["nombre"],
+            "quantity" => 1,
+            "unit_price" => $item["precio"],
+            "currency_id" => "ARS"
+        ];
+    }, $data["items"]),
+    "back_urls" => [
+        "success" => "success.php",
+        "failure" => "failure.php",
+        "pending" => "pending.php"
+    ],
+    "auto_return" => "approved",
+    "notification_url" => "https://ciervonegro.com.ar/webhook.php"
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 ];
 
 $preference->auto_return = "approved";

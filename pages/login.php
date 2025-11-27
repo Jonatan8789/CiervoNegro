@@ -12,7 +12,11 @@ if (isset($_SESSION['usuario'])) {
 <head>
   <meta charset="UTF-8">
   <title>Iniciar Sesión - Ciervo Negro</title>
+<<<<<<< HEAD
 <link rel="stylesheet" href="../styles/style.css">
+=======
+ <link rel="stylesheet" href="../styles/style.css" />
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 </head>
 <body>
 <div class="login-container">

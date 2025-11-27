@@ -34,10 +34,17 @@ if ($stmt->num_rows > 0) {
 // Encriptar contraseña
 $passHash = password_hash($password, PASSWORD_DEFAULT);
 
+<<<<<<< HEAD
 // Insertar nuevo usuario con rol por defecto 'user'
 $sql = "INSERT INTO usuarios (email, password, rol) VALUES (?, ?, 'user')";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $email, $passHash);
+=======
+// Insertar nuevo usuario
+$sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sss", $nombre, $email, $passHash);
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 
 if ($stmt->execute()) {
     echo "<script>

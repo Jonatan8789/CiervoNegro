@@ -226,6 +226,7 @@ main {
 footer {
     margin-top: auto;
 }
+<<<<<<< HEAD
 
 /* USER MENU */
 .user-menu {
@@ -257,6 +258,8 @@ footer {
 .user-dropdown a:hover {
     background: rgba(255,255,255,0.1);
 }
+=======
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 </style>
 </head>
 <body>
@@ -384,6 +387,7 @@ footer {
 
 <script>
 // ======== PRODUCTOS ========
+<<<<<<< HEAD
 let productos = [];
 let carrito = [];
 
@@ -404,6 +408,15 @@ async function cargarProductos() {
         mostrarProductos();
     }
 }
+=======
+const productos = [
+    { id: 1, nombre: "Remera club lisa", descripcion: "Remera de Equipo lisa.", precio: 5000, categoria: "remeras", img: "../assets/productos/CN_Julio_2505.jpg" },
+    { id: 2, nombre: "Remera club Bordada", descripcion: "Remera bordada equipo", precio: 1200, categoria: "remeras", img: "../assets/productos/CN_Julio_2528.jpg" },
+    { id: 3, nombre: "Buzo bordado", descripcion: "Buzo bordado equipo ", precio: 35000, categoria: "buzos", img: "../assets/productos/Remera_personalizada_frente.png" }
+];
+
+let carrito = [];
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 
 // ======== MOSTRAR PRODUCTOS ========
 function mostrarProductos() {
@@ -414,10 +427,16 @@ function mostrarProductos() {
     productos
         .filter(p => categoriasSeleccionadas.includes(p.categoria))
         .forEach(prod => {
+<<<<<<< HEAD
             const imgSrc = prod.imagen || prod.img || "../assets/productos/default.jpg";
             grid.innerHTML += `
             <div class="product-card">
                 <img src="${imgSrc}" alt="${prod.nombre}">
+=======
+            grid.innerHTML += `
+            <div class="product-card">
+                <img src="${prod.img}" alt="${prod.nombre}">
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
                 <div class="product-info">
                     <h4>${prod.nombre}</h4>
                     <p>${prod.descripcion}</p>
@@ -486,6 +505,7 @@ function pagar() {
         alert("El carrito está vacío");
         return;
     }
+<<<<<<< HEAD
 
     fetch("../php/crear_preferencia.php", {
         method: "POST",
@@ -510,6 +530,9 @@ function pagar() {
         console.error("Error al generar preferencia:", err);
         alert("Hubo un error con Mercado Pago.");
     });
+=======
+    alert("Redirigiendo a Mercado Pago (simulación)...");
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 }
 
 // ======== VACIAR CARRITO DE COMRAS=====
@@ -519,7 +542,11 @@ function vaciarCarrito() {
 }
 
 // Inicializar
+<<<<<<< HEAD
 cargarProductos();
+=======
+mostrarProductos();
+>>>>>>> aa21b071b825d123a85b25cd2e83b7d92d3f9b4b
 </script>
 <script src="productos.js"></script>
 </main>
